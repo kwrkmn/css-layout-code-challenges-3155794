@@ -12,6 +12,7 @@ body > * {
 .header {
   background-color: skyblue;
   border: 0.5rem black solid;
+  grid-column: span 3;
 }
 
 .navbar {
@@ -46,15 +47,17 @@ body > * {
 
 @media screen and (min-width: 100ch) {
   body {
-
+    display: grid;
+    grid-template-columns:  1fr 20%;
   }
-
-  .header {
-    
+  
+  .header,
+  .footer {
+    grid-column: span 2;
   }
 
   .navbar {
-    
+    grid-column: span 2;
   }
   
   .main {
@@ -62,25 +65,29 @@ body > * {
   }
 
   .sidebar {
-
+    grid-column: span 2;
   }
 
   .footer {
-
+    
   }
 }
 
 @media screen and (min-width: 140ch) {
   body {
-
+    grid-template-columns: 20% 1fr 20%;
   }
-
+  .header,
+  .footer {
+    grid-column: span 3;
+  }
   .navbar {
-    
+    /* grid-column: span 1; */
   }
 
   .navbar ul {
-    
+    display: flex;
+    flex-direction: column;
   }
 
   .main {
